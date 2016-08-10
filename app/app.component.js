@@ -11,15 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = 'My App';
+        this.index = 0;
     }
+    AppComponent.prototype.changeTitle = function () {
+        this.index++;
+        this.title = 'MY NUMBER IS ' + this.index;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>My First Angular 2 App</h1>'
+            template: '<h1 (click)="changeTitle()">{{title}}</h1>'
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
